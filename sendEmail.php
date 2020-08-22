@@ -2,14 +2,15 @@
 
 // Replace this with your own email address
 $siteOwnersEmail = 'himanshulikhar55@gmail.com';
-
+$name = "";
+$email = ""; $subject = ""; $contact = "";
 
 if($_POST) {
 
-   $name = trim(stripslashes($_POST['contactName']));
-   $email = trim(stripslashes($_POST['contactEmail']));
-   $subject = trim(stripslashes($_POST['contactSubject']));
-   $contact_message = trim(stripslashes($_POST['contactMessage']));
+   $name = $_POST['contactName'];
+   $email = $_POST['contactEmail'];
+   $subject = $_POST['contactSubject'];
+   $contact_message = $_POST['contactMessage'];
 
    // Check Name
 	if (strlen($name) < 2) {
@@ -65,5 +66,9 @@ if($_POST) {
 	} # end if - there was a validation error
 
 }
-
+mail($siteOwnersEmail, $subject, $message);
+error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");
+header("Location: index.html");
 ?>
