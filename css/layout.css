@@ -763,8 +763,8 @@ call-to-action .button {
   margin-bottom: 42px;
 }
 
-#contact a, #contact a:visited  { color: #11ABB0; }
-#contact a:hover, #contact a:focus { color: #fff; }
+#contact a, #contact a:visited  { color: white; }
+#contact a:hover, #contact a:focus { color: teal; }
 
 #contact h1 {
    font: 18px 'opensans-bold', sans-serif;
